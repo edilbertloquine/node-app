@@ -14,7 +14,6 @@ exports.validateRegister = (req, res, next) => {
     req.checkBody('name', 'Name is required.').notEmpty();
     req.checkBody('email', 'Email is required.').notEmpty();
     req.sanitizeBody('email').normalizeEmail({
-        remove_dots: false,
         remove_extension: false,
         gmail_remove_subaddress: false
     });
